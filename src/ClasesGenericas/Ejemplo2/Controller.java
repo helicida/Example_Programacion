@@ -3,10 +3,9 @@ package ClasesGenericas.Ejemplo2;
 /**
  * Created by 48089748z on 11/12/15.
  */
-public class Controller
-{
-    public static void main(String[] args)
-    {
+public class Controller{
+
+    public static void main(String[] args){
         /*Pila pila = new Pila<Integer>();
 
         pila.add("String 0");
@@ -29,23 +28,24 @@ public class Controller
             System.out.println("Valor posicion "+x+": "+pila.get(x));
         }*/
 
-        Cola cola = new Cola<String>();
+        Cola cola = new Cola<Number>();
 
-        cola.add("String 0");
-        cola.add("String 1");
-        cola.add("String 2");
+        cola.add(1);
+        cola.add(2.45);
+        cola.add(2.56374645645645623);
 
-        System.out.println("ESTO DEBERIA SER TRUE: "+cola.contains("Posicion 0"));
-        System.out.println("SIZE DEBERIA SER 3: "+cola.size());
+        System.out.println("ESTO DEBERIA SER TRUE: " + cola.contains(1));
+        System.out.println("SIZE DEBERIA SER 3: " + cola.size());
         System.out.println("\n VALORES INICIALES");
-        for(int x=0; x<cola.size(); x++)
-        {
-            System.out.println("Valor posicion "+x+": "+cola.get(x));
+
+        for(int iterador = 0; iterador < cola.size(); iterador++){
+            System.out.println("Valor posicion " + iterador + ": " + cola.get(iterador));
         }
+
         cola.remove(0);
-        System.out.println("ESTO DEBERIA SER FALSE: "+cola.contains("String 0"));
+        System.out.println("ESTO DEBERIA SER FALSE: " + cola.contains(120));
         cola.clear();
-        System.out.println("SIZE DEBERIA SER 0: "+cola.size());
+        System.out.println("SIZE DEBERIA SER 0: " + cola.size());
 
     }
 }

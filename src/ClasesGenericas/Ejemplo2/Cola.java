@@ -2,34 +2,33 @@ package ClasesGenericas.Ejemplo2;
 
 import java.util.ArrayList;
 
-public class Cola <Anything>
-{
+public class Cola <Anything extends Number>{
+
     public ArrayList<Anything> vector = new ArrayList<>();
 
     public Cola(){}
 
-    public void add(Anything variable)
-    {
+    public void add(Anything variable){
         vector.add(variable);
     }
-    public void remove(Integer position)
-    {
+
+    public void remove(Integer position){
         vector.remove(position);
     }
-    public Integer size()
-    {
+
+    public Integer size(){
         return vector.size();
     }
-    public Anything get(Integer position)
-    {
+
+    public Anything get(Integer position){
         return vector.get(position);
     }
-    public void clear()
-    {
+
+    public void clear(){
         vector.clear();
     }
-    public boolean contains(Anything variable)
-    {
+
+    public boolean contains(Anything variable){
         return vector.contains(variable);
     }
 }
