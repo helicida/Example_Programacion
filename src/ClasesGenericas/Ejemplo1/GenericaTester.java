@@ -1,4 +1,4 @@
-package ClasesGenericas.Ejemplo;
+package ClasesGenericas.Ejemplo1;
 
 /**
  * Created by sergi on 11/12/2015.
