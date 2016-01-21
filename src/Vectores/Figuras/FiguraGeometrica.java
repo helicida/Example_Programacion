@@ -90,5 +90,6 @@ public abstract class FiguraGeometrica implements Comparable<Object> {
 	public Color getColor() {
 		return color;
 	}
+
 	abstract public double area();
 }

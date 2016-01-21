@@ -41,9 +41,10 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
             System.out.println("MENU:");
             System.out.println("1 - Añadir objetos al array");
             System.out.println("2 - Eliminar objeto del array");
-            System.out.println("3 - Obtener informacion de algun objeto del array");
-            System.out.println("4 - Saber espacios llenos del array");
-            System.out.println("5 - Vacíar el array");
+            System.out.println("3 - Obtener informacion de algun objeto del array (POR ID DE FIGURA)");
+            System.out.println("4 - Obtener informacion de algun objeto del array (POR POSICIÓN DE ARRAY)");
+            System.out.println("5 - Saber espacios llenos del array");
+            System.out.println("6 - Vacíar el array");
             System.out.println("0 - Salir del programa");
             System.out.println(" ");
 
@@ -78,17 +79,24 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 3:
-                    System.out.println("\nIntroduce la id de la figura de la que quieres obtener informacion:");
+                    System.out.println("\nIntroduce la posicion del array de la que quieres obtener informacion:");
                         int idInfo = teclat.nextInt();
 
-                    grupoFiguras.buscar(idInfo).imprimirInfo();
+                    grupoFiguras.buscarPorID(idInfo).imprimirInfo();
                 break;
 
                 case 4:
-                    System.out.println("Hay " + grupoFiguras.numeroOcupados() + "/" + grupoFiguras.getTamanyoArray());
+                    System.out.println("\nIntroduce la id de la figura de la que quieres obtener informacion:");
+                    int posicionArray = teclat.nextInt();
+
+                    grupoFiguras.buscarPorPos(posicionArray).imprimirInfo();
                 break;
 
                 case 5:
+                    System.out.println("Hay " + grupoFiguras.numeroOcupados() + "/" + grupoFiguras.getTamanyoArray());
+                break;
+
+                case 6:
                     grupoFiguras.vaciarArray();
                     System.out.println("Se ha vaciado el array correctamente");
                 break;

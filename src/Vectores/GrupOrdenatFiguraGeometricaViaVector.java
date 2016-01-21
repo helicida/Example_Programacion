@@ -14,6 +14,7 @@ public class GrupOrdenatFiguraGeometricaViaVector {
 
     public GrupOrdenatFiguraGeometricaViaVector(int tamanyoVector) {
 
+        // Si el tamaño del vector es incorrecto, que suelte una excepción
         if (tamanyoVector < 0){
             throw new IllegalArgumentException(tamanyoVector + " | El valor introducido como tamaño del vector es incorrecto, ha de ser superior a cero");
         }
@@ -21,9 +22,21 @@ public class GrupOrdenatFiguraGeometricaViaVector {
         vector = new Vector<>(tamanyoVector);
     }
 
-    public FiguraGeometrica devolverFigura(int indice){
-
+    public FiguraGeometrica buscarFiguraPorPosicion(int indice){
+        // Devuelve la figura en el indice introducido
         return vector.get(indice);
+    }
+
+    public FiguraGeometrica buscarFiguraPorId(int indice){
+
+        // Devuelve la figura con un ID determinado
+        for (int iterador = 0; iterador < vector.size(); iterador ++){
+            if (vector.get(iterador).getCodigo() == indice){
+                return vector.get(iterador);
+            }
+        }
+
+        return null;
     }
 
     // Metodo con el que añadimos un objeto al vector
@@ -33,6 +46,7 @@ public class GrupOrdenatFiguraGeometricaViaVector {
 
         int indice; // indice en el vector
 
+        // Si la figura introducida fuese null da un mensaje de error y no devuelve nada
         if (figura == null){
             System.out.println("No se ha podido añadir el objeto, el objeto no es valido");
             return 0;
@@ -53,6 +67,7 @@ public class GrupOrdenatFiguraGeometricaViaVector {
     }
 
     public void vaciarVector(){
+        // Limpia el vector
         vector.clear();
     }
 
@@ -64,7 +79,7 @@ public class GrupOrdenatFiguraGeometricaViaVector {
         for (iterador = 0; iterador < vector.size() && vector.get(iterador).getCodigo() != codigo; iterador++);
 
         if (iterador == vector.size()){
-            System.out.println(":No existe la figura:");
+            System.out.println("No existe la figura");
         }
 
         System.out.println("El objeto " + vector.get(iterador) + " eliminado");
