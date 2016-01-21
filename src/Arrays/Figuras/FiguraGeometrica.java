@@ -1,4 +1,4 @@
-package Vectores.Figuras;
+package Arrays.Figuras;
 
 import java.awt.*;
 import java.util.Comparator;
@@ -36,8 +36,7 @@ public abstract class FiguraGeometrica implements Comparable<Object> {
 				"\n · Color: " + color);
 	}
 
-	public boolean equals (Object figura) {
-
+	public boolean equals(Object figura) {
 		if (this == figura){
 			return true;
 		}
@@ -90,5 +89,20 @@ public abstract class FiguraGeometrica implements Comparable<Object> {
 	public Color getColor() {
 		return color;
 	}
+
+	public static class ComparatorFiguraGeometricaSegonsArea implements Comparator<FiguraGeometrica> {
+
+		public int compare(FiguraGeometrica f1, FiguraGeometrica f2) {
+
+			double result = f1.area() - f2.area();
+			if (result < 0)
+				return -1; // Cas en que f1.area() < f2.area();
+			if (result > 0)
+				return 1; // Cas en que f1.area() > f2.area();
+			return 0; // Cas en que f1.area() i f2.area() s�n iguals
+		}
+	}
+
+
 	abstract public double area();
 }

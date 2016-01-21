@@ -1,8 +1,10 @@
-package Vectores;
+package Arrays;
 
-import Vectores.Figuras.Circulo;
-import Vectores.Figuras.Rectangulo;
-import Vectores.Figuras.Triangulo;
+import Arrays.Figuras.Circulo;
+import Arrays.Figuras.Rectangulo;
+import Arrays.Figuras.Triangulo;
+import Arrays.GrupOrdenatFiguraGeometricaViaArray;
+
 
 import java.awt.Color;
 import java.util.Scanner;
@@ -10,12 +12,12 @@ import java.util.Scanner;
 /**
  * Created by 46465442z on 20/01/2016.
  */
-public class ProvaGrupOrdenatFiguraGeometricaViaVector {
+public class ProvaGrupOrdenatFiguraGeometricaViaArray {
 
     public static void main(String[] args) {
 
         // Creamos un nuevo grupo de figuras
-        GrupOrdenatFiguraGeometricaViaVector grupoFiguras= new GrupOrdenatFiguraGeometricaViaVector(50);
+        GrupOrdenatFiguraGeometricaViaArray grupoFiguras= new GrupOrdenatFiguraGeometricaViaArray(50);
 
         Scanner teclat = new Scanner(System.in);
 
@@ -37,10 +39,11 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
 
             System.out.println("\n");
             System.out.println("MENU:");
-            System.out.println("1 - Añadir objetos al vector");
-            System.out.println("2 - Eliminar objeto del vector");
-            System.out.println("3 - Obtener informacion de algun objeto del vector");
-            System.out.println("4 - Vaciar el vector");
+            System.out.println("1 - Añadir objetos al array");
+            System.out.println("2 - Eliminar objeto del array");
+            System.out.println("3 - Obtener informacion de algun objeto del array");
+            System.out.println("4 - Saber espacios llenos del array");
+            System.out.println("5 - Vacíar el array");
             System.out.println("0 - Salir del programa");
             System.out.println(" ");
 
@@ -78,12 +81,16 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                     System.out.println("\nIntroduce la id de la figura de la que quieres obtener informacion:");
                         int idInfo = teclat.nextInt();
 
-                    grupoFiguras.devolverFigura(idInfo).imprimirInfo();
+                    grupoFiguras.buscar(idInfo).imprimirInfo();
                 break;
 
                 case 4:
-                    grupoFiguras.vaciarVector();
-                    System.out.println("El vector se ha limpiado correctamente");
+                    System.out.println("Hay " + grupoFiguras.numeroOcupados() + "/" + grupoFiguras.getTamanyoArray());
+                break;
+
+                case 5:
+                    grupoFiguras.vaciarArray();
+                    System.out.println("Se ha vaciado el array correctamente");
                 break;
 
                 default:

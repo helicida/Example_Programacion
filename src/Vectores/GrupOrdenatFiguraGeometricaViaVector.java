@@ -34,8 +34,8 @@ public class GrupOrdenatFiguraGeometricaViaVector {
         int indice; // indice en el vector
 
         if (figura == null){
-            System.out.println("No se ha podido añadir el objeto");
-            return -2;
+            System.out.println("No se ha podido añadir el objeto, el objeto no es valido");
+            return 0;
         }
 
         indice = vector.indexOf(figura);
@@ -49,7 +49,11 @@ public class GrupOrdenatFiguraGeometricaViaVector {
         Collections.sort(vector);
 
         System.out.println("Se ha añadido el objeto");
-        return -1;
+        return 0;
+    }
+
+    public void vaciarVector(){
+        vector.clear();
     }
 
     // Buscamos un objeto y lo eliminamos
