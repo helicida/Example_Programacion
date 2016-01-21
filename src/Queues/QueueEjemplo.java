@@ -1,4 +1,4 @@
-package Queue_Vectores_Collections_Arrays;
+package Queues;
 
 import java.util.*;
 
