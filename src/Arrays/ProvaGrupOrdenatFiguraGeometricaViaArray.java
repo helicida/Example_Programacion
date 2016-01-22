@@ -58,6 +58,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 1:
+                    // anyadir los objetos al array
                     grupoFiguras.anyadir(triangulo1);
                     grupoFiguras.anyadir(circulo1);
                     grupoFiguras.anyadir(rectangulo1);
@@ -71,6 +72,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 2:
+                    // eliminar un objeto del array
                     System.out.println("\nIntroduce la id de la figura a eliminar:");
                         int idEliminar = teclat.nextInt();
 
@@ -79,6 +81,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 3:
+                    // info por posicion
                     System.out.println("\nIntroduce la posicion del array de la que quieres obtener informacion:");
                         int idInfo = teclat.nextInt();
 
@@ -86,6 +89,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 4:
+                    // info por id de figura
                     System.out.println("\nIntroduce la id de la figura de la que quieres obtener informacion:");
                     int posicionArray = teclat.nextInt();
 
@@ -93,16 +97,18 @@ public class ProvaGrupOrdenatFiguraGeometricaViaArray {
                 break;
 
                 case 5:
+                    // posiciones llenas del array
                     System.out.println("Hay " + grupoFiguras.numeroOcupados() + "/" + grupoFiguras.getTamanyoArray());
                 break;
 
                 case 6:
+                    // vaciar array
                     grupoFiguras.vaciarArray();
                     System.out.println("Se ha vaciado el array correctamente");
                 break;
 
                 default:
-                    System.out.println("Ha seleccionat una opcio incorrecta");
+                    System.out.println("Has seleccionado una opción incorrecta");
                 break;
             }
         }

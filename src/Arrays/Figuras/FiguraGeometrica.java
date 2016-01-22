@@ -3,6 +3,9 @@ package Arrays.Figuras;
 import java.awt.*;
 import java.util.Comparator;
 
+/**
+ * Created by 46465442z on 20/01/2016.
+ */
 public abstract class FiguraGeometrica implements Comparable<Object> {
 	
 	protected int codigo = 0;					// Codigo figura

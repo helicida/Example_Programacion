@@ -55,6 +55,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                 break;
 
                 case 1:
+                    // anyadir figuras al vector
                     grupoFiguras.anyadir(triangulo1);
                     grupoFiguras.anyadir(circulo1);
                     grupoFiguras.anyadir(rectangulo1);
@@ -68,6 +69,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                 break;
 
                 case 2:
+                    // eliminar figura del vector
                     System.out.println("\nIntroduce la id de la figura a eliminar:");
                         int idEliminar = teclat.nextInt();
 
@@ -76,6 +78,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                 break;
 
                 case 3:
+                    // obtener información del vector por posicion
                     System.out.println("\nIntroduce la posicion del vector de la que quieres obtener informacion:");
                         int posicion = teclat.nextInt();
 
@@ -83,6 +86,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                 break;
 
                 case 4:
+                    // info por id de figura
                     System.out.println("\nIntroduce la id de la figura de la que quieres obtener informacion");
                     int idInfo = teclat.nextInt();
 
@@ -90,6 +94,7 @@ public class ProvaGrupOrdenatFiguraGeometricaViaVector {
                 break;
 
                 case 5:
+                    // vaciar el vector
                     grupoFiguras.vaciarVector();
                     System.out.println("El vector se ha limpiado correctamente");
                 break;
